@@ -136,3 +136,5 @@ out
 .pnp.*
 
 /dist/
+
+geckodriver.exe
