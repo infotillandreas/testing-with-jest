@@ -14,5 +14,8 @@
     "url": "(https://github.com/infotillandreas/testing-with-jest)"
   },
   "author": "Andreas Persson",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.13.7"
+  }
 }
