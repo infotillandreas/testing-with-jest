@@ -22,6 +22,10 @@ test('peek on stack with two or more elements returns the top element', () => {
 /* Eget test */
 
 test('make sure the stack is empty, push two elements to stack, pop second element and return first element', () => {
+    /* Tömmer stacken sålänge den inte är undefined */
+    while (stack.peek() !== undefined) {
+        stack.pop();
+    };
     expect(stack.peek()).toBeUndefined();
     stack.push(1);
     stack.push(2);

@@ -50,6 +50,10 @@ describe('Clicking "Pusha till stacken", then clicking "Poppa stacken"', () => {
         await pushPop.click();
         await alert.accept();
 
+        /* Uppdaterar top_of_stack med översta elementet */
+        let pushPeek = await driver.findElement(By.id('peek'));
+        await pushPeek.click();
+
         let newTop = await driver.findElement(By.id('top_of_stack')).getText();
         expect(newTop).toBe("Bananer");
     })
