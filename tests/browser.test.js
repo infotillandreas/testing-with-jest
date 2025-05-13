@@ -34,3 +34,23 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+
+/* Egna test */
+
+describe('Clicking "Pusha till stacken", then clicking "Poppa stacken"', () => {
+    it('should open a prompt box, enter "Hästar" and push it to the stack, then pop stack expecting "Bananer" as the top element"', async () => {
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys("Hästar");
+        await alert.accept();
+
+        let pushPop = await driver.findElement(By.id('pop'));
+        await pushPop.click();
+        await alert.accept();
+
+        let newTop = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(newTop).toBe("Bananer");
+    })
+})

@@ -17,3 +17,15 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+
+/* Eget test */
+
+test('make sure the stack is empty, push two elements to stack, pop second element and return first element', () => {
+    expect(stack.peek()).toBeUndefined();
+    stack.push(1);
+    stack.push(2);
+    const popped = stack.pop();
+    expect(popped).toBe(2);
+    expect(stack.peek()).toBe(1);
+});
